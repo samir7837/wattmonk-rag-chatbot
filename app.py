@@ -20,7 +20,7 @@ st.set_page_config(
 # -----------------------------
 load_dotenv()
 
-api_key = os.getenv("OPENROUTER_API_KEY")
+api_key = os.getenv("OPENROUTER_API_KEY") or st.secrets.get("OPENROUTER_API_KEY")
 
 if not api_key:
     st.error("❌ OPENROUTER_API_KEY not found in .env file")
